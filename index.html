@@ -4,26 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <title>Document</title>
 </head>
 <body>
-        <div class="container">
                 <h1>Gif Search</h1>
             
                 <!-- gifs will Get Dumped Dere -->
-                <div id="gif-div"></div>
+            <div class="row">
+                
             
                 <!-- Rendered Buttons will get Dumped Here  -->
-                <div id="new-button"></div>
+                <div class="col s12 m3 l2" id="left-panel"> <!-- Note that "m8 l9" was added -->
+                <div id="new-button">New button here</div>
             
                 <form id="subject-form">
-                  <label for="search-input">Add a Subject</label>
+                  <label for="search-input">Search for a topic and add the button</label>
                   <input type="text" id="search-input">
                   <br>
-            
-                  <!-- Button triggers new movie to be added -->
+                <!-- Button triggers new movie to be added -->
                   <input id="add-subject" type="submit" value="Add Gif Buttons">
                 </form>
+                </div>
+                <div class="col s12 m9 l10 grey darken-2" id="right-panel"> <!-- Note that "m4 l3" was added -->
+                <div class="row" id="gif-div"></div>
+                </div>
+            </div>
     
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="./assets/javascript/script.js"></script>   

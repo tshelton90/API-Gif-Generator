@@ -12,12 +12,28 @@ $(document).ready(function($) {
             url: queryURL,
             method: "GET"
         }).then(function(response) {
-            for (var i = 0; i < 5; i++) {
-                $('#gif-div').append(`<img class="gif" id="giphy-gif${i}" src="${response.data[i].images.fixed_width_still.url}">`);
-
+            console.log(response)
+            console.log(response.data[0].images.fixed_width.url)
+            for (var i = 0; i < 10; i++) {
+                $('#gif-div').prepend(`<div class="col s6 m3" id="gifs">
+                                        <p>Rating: ${response.data[i].rating}</p>
+                                        <img src="${response.data[i].images.fixed_width_still.url}" data-still="${response.data[i].images.fixed_width_still.url}" data-animate="${response.data[i].images.fixed_width.url}" data-state="still" class="responsive-image gif">
+                                        </div>`)
             };
         });
     };
+
+    function playPause(){
+        var state = $(this).attr("data-state");
+        if (state === "still") {
+          $(this).attr("src", $(this).attr("data-animate"));
+          $(this).attr("data-state", "animate");
+        } else {
+          $(this).attr("src", $(this).attr("data-still"));
+          $(this).attr("data-state", "still");
+        };
+    };
+    
 
     function renderButtons() {
         //empty the div id so that the new buttons don't stack
@@ -38,8 +54,10 @@ $(document).ready(function($) {
         renderButtons();
     });
 
-    $(document).on('click', '.added-button', insertSubjectGif);
+    $(document).on('click', '.added-button', insertSubjectGif)
 
+    $(document).on('click', '.gif', playPause);
+     
     console.log(subjects)
 
 //end of documents

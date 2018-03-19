@@ -1,0 +1,24 @@
+#gifs{
+    background-color: #616161 ;
+    width: 240px;
+    height: 240px;
+    margin: 10px 25px;
+    text-transform: uppercase;
+    color: #ffffff
+}
+
+#right-panel {
+    height: 100%;
+}
+
+#left-panel {
+    height: 750px;
+}
+
+.added-button {
+    margin-right: 10px;
+}
+
+@media max-width: 640px{
+
+}
