@@ -4,7 +4,7 @@ $(document).ready(function($) {
 
     function insertSubjectGif() {
         var subject = $(this).text().trim();
-        var queryURL = 'http://api.giphy.com/v1/gifs/search?q=' + subject + '&api_key=8X9vY0Twxp3XBNjJ3BfmLj3kRiVKlHxi';
+        var queryURL = 'https://api.giphy.com/v1/gifs/search?q=' + subject + '&api_key=8X9vY0Twxp3XBNjJ3BfmLj3kRiVKlHxi';
 
 
         //ajax for the subject button
